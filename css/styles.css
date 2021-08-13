@@ -36,6 +36,9 @@ body {
 .hidden {
     display: none;
 }
+.main-content-list-quizzes {
+    height: 100vh;
+}
 
 .none-quiz {
     width: 1051px;
@@ -159,4 +162,38 @@ h3 {
     .none-quiz {
         width: 90.67vw;
     }    
-} 
+
+}
+
+.hidden {
+    display: none;
+}
+
+.main-content-quizz {
+    width: 100%;
+    margin-top: 69px;
+    position: relative;
+}
+
+.top-banner {
+    height: 227px;
+    width: 100%;
+    background-color: #D4D4D4;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-banner > img {
+    width: 100%;
+    position: absolute;
+}
+
+.top-banner > .quizz-title {
+    position: absolute;
+    z-index: 1;
+
+    font-size: 39px;
+    color: #FFFFFF;
+}

@@ -3,79 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>BuzzQuizz</title>
 </head>
 <body>
     <header class="top-bar">
         <h1 class="title">BuzzQuizz</h1>
-    </header>
-    <div class="screens">  
-        <main class="first-screen">
-            <div class="hidden">
-                <section class="none-quiz">
-                    <p>Você não criou nenhum quizz ainda :(</p>
-                    <button class="create-quiz">Criar Quizz</button>
-                </section>
-            </div>
-            <section class="your-quizzes">
-                <div class="tittle-and-icon">
-                    <h2>Seus Quizzes</h2>
-                <span>
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                </span>     
+    </header>    
+    <main>
+        <!-- HTML Tela 1 - Lista de Quizzes -->
+        <div class="main-content-list-quizzes">
+            <main class="first-screen">
+                <div class="hidden">
+                    <section class="none-quiz">
+                        <p>Você não criou nenhum quizz ainda :(</p>
+                        <button class="create-quiz">Criar Quizz</button>
+                    </section>
                 </div>
-                <ul class="quizzes-list">
-                    <li class="option">
-                        <img class="image-quiz" src="assets/pot.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>O quão Potterhead é você?</h3>
-                    </li>
-                    <li class="option">
-                        <img class="image-quiz" src="assets/ex.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>É ex-BBB ou ex-De férias com o Ex?</h3>
-                    </li>
-                </ul>
-            </section>
-            <section class="all-quizzes">
-                <h2>Todos os Quizzes</h2>     
-                <ul class="quizzes-list">
-                    <li class="option">
-                        <img class="image-quiz" src="assets/simp.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
-                    </li>
-                    <li class="option">
-                        <img class="image-quiz" src="assets/preg.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>O quanto você é de boas?</h3>
-                    </li>
-                    <li class="option">
-                        <img class="image-quiz" src="assets/simp.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
-                    </li>
-                    <li class="option">
-                        <img class="image-quiz" src="assets/simp.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
-                    </li>
-                    <li class="option">
-                        <img class="image-quiz" src="assets/preg.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
-                    </li>
-                    <li class="option">
-                        <img class="image-quiz" src="assets/simp.png">
-                        <div class="image-quiz-box"></div>
-                        <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
-                    </li>
-                </ul>           
-            </section>
-        </main>
-    </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> 
+                <section class="your-quizzes">
+                    <div class="tittle-and-icon">
+                        <h2>Seus Quizzes</h2>
+                    <span>
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </span>     
+                    </div>
+                    <ul class="quizzes-list">
+                        <li class="option">
+                            <img class="image-quiz" src="assets/pot.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>O quão Potterhead é você?</h3>
+                        </li>
+                        <li class="option">
+                            <img class="image-quiz" src="assets/ex.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>É ex-BBB ou ex-De férias com o Ex?</h3>
+                        </li>
+                    </ul>
+                </section>
+                <section class="all-quizzes">
+                    <h2>Todos os Quizzes</h2>     
+                    <ul class="quizzes-list">
+                        <li class="option">
+                            <img class="image-quiz" src="assets/simp.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
+                        </li>
+                        <li class="option">
+                            <img class="image-quiz" src="assets/preg.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>O quanto você é de boas?</h3>
+                        </li>
+                        <li class="option">
+                            <img class="image-quiz" src="assets/simp.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
+                        </li>
+                        <li class="option">
+                            <img class="image-quiz" src="assets/simp.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
+                        </li>
+                        <li class="option">
+                            <img class="image-quiz" src="assets/preg.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
+                        </li>
+                        <li class="option">
+                            <img class="image-quiz" src="assets/simp.png">
+                            <div class="image-quiz-box"></div>
+                            <h3>Acerte os personagens corretos dos Simpsons e prove seu amor!</h3>
+                        </li>
+                    </ul>           
+                </section>
+            </main>
+        </div>
+
+        <!-- HTML Tela 2 - Página de um Quizz -->
+        <div class="main-content-quizz hidden">
+            <div class="top-banner">
+                <img src="./assets/top-bar-image.png">
+                <p class="quizz-title">O quão Potterhead é você?</p>
+            </div>
+        </div>
+
+        <!-- HTML Tela 3 - Criação de um Quizz -->
+    </main>
+    
 </body>
 </html>
