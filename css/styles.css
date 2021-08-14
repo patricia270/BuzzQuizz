@@ -150,6 +150,10 @@ h3 {
     width: 100%;
     margin-top: 69px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .top-banner {
@@ -176,7 +180,7 @@ h3 {
     color: #FFFFFF;
 }
 
-.questions {
+.boxes {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -184,8 +188,8 @@ h3 {
     align-items: center;
 }
 
-.question {
-    width: 18cm;
+.question, .result {
+    width: 20cm;
     margin-top: 42px;
     margin-bottom: 26px;
     display: flex;
@@ -223,7 +227,7 @@ h3 {
 
 .alternative > img {
     width: 100%;
-    height: calc((9cm - 24px)/1.9);
+    height: calc((10cm - 24px)/1.9);
 }
 
 .alternative > p {
@@ -235,6 +239,72 @@ h3 {
     display: flex;
     align-items: center;
     color: #000000;
+}
+
+.result > p {
+    height: 95px;
+    background-color: #EC362D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    color: #FFFFFF;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.result-description-container {
+    display: flex;
+    padding: 12px;
+}
+
+.result-description-container > p {
+    width: 50%;
+    margin-left: 18px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    color: #484848;
+}
+
+.result-description-container > img {
+    width: 50%;
+    height: calc((10cm - 24px)/1.33);
+}
+
+.restart-quizz {
+    width: 260px;
+    height: 52px;
+    margin-top: 23px;
+    background-color: #EC362D;
+    border-width: 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    color: #FFF5F4;
+}
+
+.home {
+    width: 219px;
+    height: 44px;
+    margin-top: 26px;
+    margin-bottom: 85px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #818181;
 }
 
 @media (max-width: 1100px) {
@@ -265,7 +335,7 @@ h3 {
     }  
 
     .question {
-        width: min(100%, 18cm);
+        width: min(100%, 20cm);
         margin-top: 24px;
         margin-bottom: 4px;
         padding: 13px;
