@@ -13,9 +13,9 @@
     </header>    
     <main>
         <!-- HTML Tela 1 - Lista de Quizzes -->
-        <div class="main-content-list-quizzes hidden">
-            <div class="first-screen">
-                <div class="hidden">
+        <div class="first-screen">
+            <div class="main-content-list-quizzes">
+                <div class="first-login">
                     <section class="none-quiz">
                         <p>Você não criou nenhum quizz ainda :(</p>
                         <button class="create-quiz">Criar Quizz</button>
@@ -76,69 +76,102 @@
         </div>
 
         <!-- HTML Tela 2 - Página de um Quizz -->
-        <div class="main-content-quizz">
-            <div class="top-banner">
-                <img src="./assets/top-bar-image.png">
-                <p class="quizz-title">O quão Potterhead é você?</p>
+        <div class="second-screen hidden">
+            <div class="main-content-quizz">
+                <div class="top-banner">
+                    <img src="./assets/top-bar-image.png">
+                    <p class="quizz-title">O quão Potterhead é você?</p>
+                </div>
+                <ul class="boxes">
+                    <li class="question">
+                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                        <div class="alternatives-wrapper">
+                            <div class="alternative">
+                                <img src="./assets/gato.png">
+                                <p>Gatíneo</p>
+                            </div>
+                            <div class="alternative">
+                                <img src="./assets/ratata.png">
+                                <p>Ratata</p>
+                            </div>
+                            <div class="alternative">
+                                <img src="./assets/sapo.png">
+                                <p>Sapo gordo</p>
+                            </div>
+                            <div class="alternative">
+                                <img src="./assets/furao.png">
+                                <p>Mustela putorius (o Furão)</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="question">
+                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                        <div class="alternatives-wrapper">
+                            <div class="alternative">
+                                <img src="./assets/gato.png">
+                                <p>Gatíneo</p>
+                            </div>
+                            <div class="alternative">
+                                <img src="./assets/ratata.png">
+                                <p>Ratata</p>
+                            </div>
+                            <div class="alternative">
+                                <img src="./assets/sapo.png">
+                                <p>Sapo gordo</p>
+                            </div>
+                            <div class="alternative">
+                                <img src="./assets/furao.png">
+                                <p>Mustela putorius (o Furão)</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="result">
+                        <p>88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
+                        <div class="result-description-container">
+                            <img src="./assets/welcome-hogwarts.png">
+                            <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="restart-quizz">Reiniciar Quizz</button>
+                <button class="home">Voltar pra home</button>
             </div>
-            <ul class="boxes">
-                <li class="question">
-                    <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-                    <div class="alternatives-wrapper">
-                        <div class="alternative">
-                            <img src="./assets/gato.png">
-                            <p>Gatíneo</p>
-                        </div>
-                        <div class="alternative">
-                            <img src="./assets/ratata.png">
-                            <p>Ratata</p>
-                        </div>
-                        <div class="alternative">
-                            <img src="./assets/sapo.png">
-                            <p>Sapo gordo</p>
-                        </div>
-                        <div class="alternative">
-                            <img src="./assets/furao.png">
-                            <p>Mustela putorius (o Furão)</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="question">
-                    <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-                    <div class="alternatives-wrapper">
-                        <div class="alternative">
-                            <img src="./assets/gato.png">
-                            <p>Gatíneo</p>
-                        </div>
-                        <div class="alternative">
-                            <img src="./assets/ratata.png">
-                            <p>Ratata</p>
-                        </div>
-                        <div class="alternative">
-                            <img src="./assets/sapo.png">
-                            <p>Sapo gordo</p>
-                        </div>
-                        <div class="alternative">
-                            <img src="./assets/furao.png">
-                            <p>Mustela putorius (o Furão)</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="result">
-                    <p>88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
-                    <div class="result-description-container">
-                        <img src="./assets/welcome-hogwarts.png">
-                        <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
-                    </div>
-                </li>
-            </ul>
-            <button class="restart-quizz">Reiniciar Quizz</button>
-            <button class="home">Voltar pra home</button>
         </div>
 
         <!-- HTML Tela 3 - Criação de um Quizz -->
+        <div class="third-screen hidden">
+            <div class="main-content-create-quizzes">
+                <div class="terceira1 hidden">
+                    <h4 class="header-third-screen">Comece pelo começo</h4>               
+                    <div class="inicio">
+                        <input type="text" placeholder="Título do seu quizz">
+                        <input type="text" placeholder="URL da imagem do seu quizz">
+                        <input type="text" placeholder="Quantidade de perguntas do quizz">
+                        <input type="text" placeholder="Quantidade de níveis do quizz">
+                    </div>
+                    <button class="seguir-para-criar">Prosseguir pra criar perguntas</button>
+                </div>
+                <div class="terceira2">
+                    <span>Pergunta 1</span>
+                    <div class="create-questions">
+                        <input type="text" placeholder="Título do seu quizz">
+                        <input type="text" placeholder="URL da imagem do seu quizz">
+                        <input type="text" placeholder="Quantidade de perguntas do quizz">
+                        <input type="text" placeholder="Quantidade de níveis do quizz">
+                    </div>
+                    <span>Pergunta 1</span>
+                    <div class="create-questions">
+                        <input type="text" placeholder="Título do seu quizz">
+                        <input type="text" placeholder="URL da imagem do seu quizz">
+                        <input type="text" placeholder="Quantidade de perguntas do quizz">
+                        <input type="text" placeholder="Quantidade de níveis do quizz">
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
