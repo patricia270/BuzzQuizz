@@ -1,3 +1,5 @@
+let correctAnswersCount = 0
+let wrongAnswersCount = 0
 let currentQuizz = {
 	id: 1,
 	title: "Título do quizz",
@@ -100,11 +102,71 @@ function updateCorrectAndWrongAnswers(question) {
 	})
 }
 
+function updateCounters(alternative) {
+	if (alternative.classList.contains('correct')) {
+		correctAnswersCount++
+	} else {
+		wrongAnswersCount++
+	}
+}
+
+function removeOnClick(element) {
+	element.removeAttribute("onclick")
+}
+
+function scrollToNextElement(element) {
+	const nextElement = element.nextSibling
+	if (nextElement !== null) {
+		nextElement.scrollIntoView({behavior: 'smooth'})
+	}
+}
+
+function calculateScore() {
+	let score = correctAnswersCount / currentQuizz.questions.length
+	score *= 100
+	return Math.round(score)
+}
+
+function getLevel(score) {
+	const levelsThatAreSatisfied = currentQuizz.levels.filter(level => level.minValue <= score)
+	const level = levelsThatAreSatisfied[levelsThatAreSatisfied.length - 1]
+	return level
+}
+
+function renderResult(level, score) {
+	const ulBoxes = document.querySelector('ul.boxes')
+	ulBoxes.innerHTML += `<li class="result">
+		<p>${score}% de acerto: ${level.title}</p>
+		<div class="result-description-container">
+			<img src="${level.image}">
+			<p>${level.text}</p>
+		</div>
+	</li>`
+
+	setTimeout(()=>ulBoxes.lastChild.scrollIntoView({behavior: 'smooth'}), 2000)
+}
+
 function handleClickOnItem(item) {
 	const thisQuestion = item.parentNode.parentNode
+	const allAlternatives = thisQuestion.querySelectorAll('.alternative')
+	const numberOfQuestions = currentQuizz.questions.length
+
+	allAlternatives.forEach(removeOnClick)
 
 	setOtherItemsAsUnSelected(item)
 	updateCorrectAndWrongAnswers(thisQuestion)
+
+	updateCounters(item)
+
+	const isFinished = numberOfQuestions === correctAnswersCount + wrongAnswersCount
+
+	if (isFinished) {
+		const score = calculateScore()
+		const level = getLevel(score)
+		renderResult(level, score)
+	}
+
+	setTimeout(() => scrollToNextElement(thisQuestion.firstChild), 2000)
 }
 
 function randomComparison() {
@@ -137,7 +199,6 @@ function renderQuestion(question) {
         </div>
     </li>`
 
-
 }
 
 function renderQuizz() {
@@ -160,7 +221,13 @@ function shuffleAnswers() {
 	currentQuizz.questions.answers = questionsWithShuffledAnswers
 }
 
+function goToHome() {
+	document.querySelector('.first-screen').classList.remove('hidden')
+	document.querySelector('.second-screen').classList.add('hidden')
+}
+
 function startQuizz() {
+	window.scrollTo({ top: document.querySelector('.top-banner'), behavior: 'smooth'})
 	shuffleAnswers()
 
 	renderQuizz()
