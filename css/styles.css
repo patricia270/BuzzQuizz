@@ -33,9 +33,6 @@ body {
     height: 100%;
 }
 
-.hidden {
-    display: none;
-}
 .main-content-list-quizzes {
     height: 100vh;
 }
@@ -43,13 +40,12 @@ body {
 .none-quiz {
     width: 1051px;
     height: 181px;
-    margin: 146px auto 77px auto;
+    margin: 146px auto 112px auto;
     border: 1px dashed #D4D4D4;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: pink;
 }
 
 .none-quiz p {
@@ -76,16 +72,15 @@ body {
 
 .your-quizzes {
     width: 1081px;
-    height: 181px;
-    margin: 138px auto 77px auto;
+    margin: 179px auto 83px auto;
 }
 
-.tittle-and-icon {
-    display: flex;
-}
-
-.your-quizzes ion-icon {
-    font-size: 30px;
+span ion-icon {
+    font-size: 31px;
+    color: #EC362D;
+    position: absolute;
+    left: 128px;
+    top: -39px;
 }
 
 
@@ -101,7 +96,6 @@ body {
     margin: 0 auto;
 }
 .option {
-    position: relative;
     position: relative;
     width: 340px;
     height: 181px;
@@ -126,13 +120,14 @@ body {
 h2 {
     width: 158px;
     height: 23px;
-    margin-bottom: 12px;
     font-size: 20px;
     color: #000000;
     font-weight: bold;
     line-height: 23px;
-    margin-left: 15px;
+    position: absolute;
+    top: -35px;
 }
+
 
 h3 {
     width: 301px;
@@ -145,24 +140,6 @@ h3 {
     margin-left: 18px;
     display: flex;
     align-items: center;
-}
-
-
-
-@media (max-width: 1100px) {
-    .top-bar, .all-quizzes, .your-quizzes {
-        width: 100vw;
-    }
-
-    .quizzes-list {
-        justify-content: center;
-        width: auto;
-    }
-
-    .none-quiz {
-        width: 90.67vw;
-    }    
-
 }
 
 .hidden {
@@ -196,4 +173,32 @@ h3 {
 
     font-size: 39px;
     color: #FFFFFF;
+}
+
+@media (max-width: 1100px) {
+    .top-bar, .all-quizzes, .your-quizzes, .quizzes-list {
+        width: 100vw;
+    }
+
+    .quizzes-list {
+        justify-content: center;
+    }
+
+    .none-quiz {
+        width: 90.67vw;
+    }  
+    
+    span ion-icon {
+        left: 309px;
+    }
+
+    .your-quizzes {
+        margin-top: 144px;
+        margin-bottom: 75px;
+    }
+
+    .none-quiz {
+        margin-top: 100px;
+        margin-bottom: 70px;
+    }  
 }
