@@ -12,7 +12,7 @@ function renderQuizzes() {
             <h2>Todos os Quizzes</h2> 
             <img class="image-quiz" src="${quizzes[0].image}">
             <div class="image-quiz-box"></div>
-            <h3>${quizzes[0].title}</h3>
+            <p>${quizzes[0].title}</p>
         </li>
         `;
 
@@ -21,7 +21,7 @@ function renderQuizzes() {
         <li class="option" id="${quizzes[i].id}">
             <img class="image-quiz" src="${quizzes[i].image}">
             <div class="image-quiz-box"></div>
-            <h3>${quizzes[i].title}</h3>
+            <p>${quizzes[i].title}</p>
         </li>
         `;
     }
@@ -34,6 +34,7 @@ function listQuizzes(listQuizzesResponse) {
 }
 getQuizzes()
 
+console.log("carregou")
 
 
 
