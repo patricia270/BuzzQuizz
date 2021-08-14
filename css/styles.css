@@ -161,9 +161,6 @@ h3 {
     width: 100%;
     background-color: #D4D4D4;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: -1;
 }
 
@@ -174,9 +171,16 @@ h3 {
 }
 
 .top-banner > .quizz-title {
+    width: 100%;
+    height: 100%;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     z-index: 1;
     font-size: 39px;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #FFFFFF;
 }
 
@@ -223,6 +227,18 @@ h3 {
 .alternative {
     width: 50%;
     padding: 12px;
+}
+
+.alternative.unselected {
+    opacity: 0.3;
+}
+
+.alternative.wrong > p {
+    color: #FF4B4B;
+}
+
+.alternative.correct > p{
+    color: #009C22;
 }
 
 .alternative > img {
