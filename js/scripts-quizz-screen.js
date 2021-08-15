@@ -114,11 +114,15 @@ function removeOnClick(element) {
 	element.removeAttribute("onclick")
 }
 
+function scrollToAndCenter(element, behavior='smooth') {
+
+	window.scrollTo({ top: element.offsetTop, behavior: behavior })
+}
+
 function scrollToNextElement(element) {
 	const nextElement = element.nextSibling
-	if (nextElement !== null) {
-		nextElement.scrollIntoView({behavior: 'smooth'})
-	}
+
+	if (nextElement !== null) scrollToAndCenter(nextElement)
 }
 
 function calculateScore() {
@@ -143,7 +147,7 @@ function renderResult(level, score) {
 		</div>
 	</li>`
 
-	setTimeout(()=>ulBoxes.lastChild.scrollIntoView({behavior: 'smooth'}), 2000)
+	setTimeout(()=> scrollToAndCenter(ulBoxes.lastChild), 2000)
 }
 
 function handleClickOnItem(item) {
@@ -166,7 +170,7 @@ function handleClickOnItem(item) {
 		renderResult(level, score)
 	}
 
-	setTimeout(() => scrollToNextElement(thisQuestion.firstChild), 2000)
+	setTimeout(() => scrollToNextElement(thisQuestion), 2000)
 }
 
 function randomComparison() {
@@ -226,10 +230,25 @@ function goToHome() {
 	document.querySelector('.second-screen').classList.add('hidden')
 }
 
-function startQuizz() {
-	window.scrollTo({ top: document.querySelector('.top-banner'), behavior: 'smooth'})
-	shuffleAnswers()
-	renderQuizz()
+function showQuizzPage() {
+	document.querySelector('.first-screen').classList.add('hidden')
+	document.querySelector('.second-screen').classList.remove('hidden')
+	document.querySelector('.third-screen').classList.add('hidden')
 }
 
-startQuizz()
+function startQuizz(quizz) {
+	currentQuizz = quizz
+
+	const topBanner = document.querySelector('.top-banner')
+
+	showQuizzPage()
+
+	scrollToAndCenter(topBanner, behavior='auto')
+
+	shuffleAnswers()
+	renderQuizz()
+
+	const firstQuestion = document.querySelector('.question')
+
+	setTimeout(()=>scrollToAndCenter(firstQuestion), 500)
+}
