@@ -18,7 +18,7 @@
                 <div class="first-login">
                     <section class="none-quiz">
                         <p>Você não criou nenhum quizz ainda :(</p>
-                        <button class="create-quiz" onclick="showThirdScreen()">Criar Quizz</button>
+                        <button class="create-quiz" onclick="handleClickOnCreateQuizz()">Criar Quizz</button>
                     </section>
                 </div>
                 <section class="your-quizzes hidden">
@@ -70,15 +70,15 @@
                             <input class="number-questions" type="text" placeholder="Quantidade de perguntas do quizz">
                             <input class="number-levels" type="text" placeholder="Quantidade de níveis do quizz">
                         </div>
-                        <button class="follow-to-create" onclick="followCreateQuizz()">Prosseguir pra criar perguntas</button>
+                        <button class="follow-to-create" onclick="handleClickOnFollowToCreateQuestions()">Prosseguir pra criar perguntas</button>
                     </div>
                 </div>  
                 <div class="create-your-questions-box hidden">
                     <div class="create-box">
                         <h4 class="create-your-questions">Crie suas perguntas</h4>               
-                        <div class="div-question">
+                        <div class="pergunta">
                             <p>Pergunta 1</p>
-                            <ul class="set-question">
+                            <ul class="definindo-pergunta">
                                 <li>
                                     <input class="input-question" type="text" placeholder="Texto da pergunta">
                                 </li>
@@ -87,7 +87,7 @@
                                 </li>
                             </ul>
                             <p>Resposta correta</p>
-                            <ul class="right-answer">
+                            <ul class="resposta-correta">
                                 <li>
                                     <input class="input-right-answer" type="text" placeholder="Resposta correta">
                                 </li>
@@ -96,7 +96,7 @@
                                 </li>
                             </ul>
                             <p>Respostas incorreta</p>
-                            <ul class="wrong-answer">
+                            <ul class="resposta-incorreta">
                                 <li>
                                     <input class="input-wrong-answer" type="text" placeholder="Resposta incorreta 1">
                                 </li>
@@ -118,24 +118,23 @@
 
                             </ul>                                    
                         </div>
-                        <div class="box-closed">
+                        <div class="pergunta-fechada">
                             <span>Pergunta 2</span>
-                            <ion-icon class="edit-icon" name="create-outline"></ion-icon>
+                            <ion-icon name="create-outline"></ion-icon>
                         </div>     
-                        <div class="box-closed">
+                        <div class="pergunta-fechada">
                             <span>Pergunta 3</span>
-                            <ion-icon class="edit-icon" name="create-outline"></ion-icon>
+                            <ion-icon name="create-outline"></ion-icon>
                         </div>   
-                    </div>  
-                    <div class="button-follow-create-levels">
-                        <button class="follow-create-levels" onclick="followToCreatLevels()">Prosseguir pra criar níveis</button>                                                       </div> 
-                    </div>  
+                        <button class="follow-create-levels" onclick="followToCreatLevels()">Prosseguir pra criar níveis</button>                     
+                    </div>                    
+                </div>  
                 <div class="decide-levels-box hidden">
                     <div class="levels-box">
                         <h4 class="create-your-levels">Agora, decida os níveis</h4> 
                         <div class="level">
                             <p>Nível 1</p>
-                            <ul class="set-level">
+                            <ul class="definindo-nivel">
                                 <li>
                                     <input class="input-level-title" type="text" placeholder="Título do nível">
                                 </li>
@@ -150,11 +149,11 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="box-closed">
+                        <div class="pergunta-fechada">
                             <span>Nível 2</span>
                             <ion-icon name="create-outline"></ion-icon>
                         </div>     
-                        <div class="box-closed">
+                        <div class="pergunta-fechada">
                             <span>Nível 3</span>
                             <ion-icon name="create-outline"></ion-icon>
                         </div> 
@@ -184,6 +183,7 @@
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/scripts-quizz-screen.js"></script>
+    <script src="./js/scripts-creation-quizz.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -242,14 +242,6 @@ p {
     height: calc((10cm - 24px)/1.9);
 }
 
-.selected {
-    background-color: pink;
-}
-
-.invisible {
-    opacity: 0;
-}
-
 .alternative > p {
     padding-top: 5px;
     padding-bottom: -2px;
@@ -389,20 +381,19 @@ p {
     align-items: center;
 }
 
-.div-question p {
+.pergunta p {
     margin-left: 17px;
     margin-top: 27px;
-    padding-top: 27px;
     font-weight: bold;
 }
 
-.div-question {
+.pergunta {
     width: 600px;
     background-color: #FFFFFF;
     margin-bottom: 24px;
 } 
 
-.div-question input {
+.pergunta input {
     width: 564px;
     height: 46px;
     margin-left: 16px;
@@ -410,71 +401,70 @@ p {
     padding-left: 23.16px;
 }
 
-.box-closed {
+.pergunta-fechada {
     width: 601px;
     height: 74px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 22px;
 }
 
-.box-closed span {
+.pergunta-fechada span {
     margin-left: 17px;
     margin-top: 27px;
     margin-bottom: 25px;
     font-weight: bold;
-    position: absolute;
 }
 
-.set-question {
+.definindo-pergunta {
     margin-top: 12px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.right-answer {
+.resposta-correta {
     margin-top: 24px;
 }
 
-.wrong-answer {
+.resposta-incorreta {
     margin-top: 14px;
 }
-.box-closed ion-icon {
+.pergunta-fechada ion-icon {
     font-size: 25px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    margin-right: 20px;
 }
 
-.wrong-answer li:nth-child(2n) {
+.resposta-incorreta li:nth-child(2n) {
     margin-bottom: 32px;
 }
 
-.wrong-answer li:last-child {
+.resposta-incorreta li:last-child {
     margin-bottom: 24px;
 }
 
-.wrong-answer li:nth-child(2n + 1) {
+.resposta-incorreta li:nth-child(2n + 1) {
     margin-bottom: 14px;
 }
 
-.right-answer li:nth-child(2n) {
+.resposta-correta li:nth-child(2n) {
     margin-bottom: 28px;
 }
 
-.right-answer li:nth-child(2n + 1) {
+.resposta-correta li:nth-child(2n + 1) {
     margin-bottom: 14px;
 }
 
-.set-question li:nth-child(2n) {
+.definindo-pergunta li:nth-child(2n) {
     margin-bottom: 28px;
 }
 
-.set-question li:nth-child(2n + 1) {
+.definindo-pergunta li:nth-child(2n + 1) {
     margin-bottom: 14px;
 }
 
-.set-level {
+.definindo-nivel {
     margin-top: 27px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
@@ -516,7 +506,6 @@ p {
 .follow-create-levels {
     width: 352.82px;
     height: 54px;
-    margin: 0 auto;
     margin-top: 59px;
     margin-bottom: 15px;
     background-color: #EC362D;
@@ -524,12 +513,6 @@ p {
     border: none;
     color: #FFF5F4;
     font-size: 21px;
-}
-
-.button-follow-create-levels {
-    width: 352.82px;
-    height: 54px;
-    margin: 0 auto;
 }
 
 .button-finish-quizz {
@@ -718,4 +701,12 @@ p {
         margin-bottom: 66px;
         font-size: 18px;
     }
+}
+
+.pergunta-fechada :not(.to-show-when-closed) {
+    display: none;
+}
+
+.pergunta .to-show-when-closed, .level .to-show-when-closed {
+    display: none;
 }
