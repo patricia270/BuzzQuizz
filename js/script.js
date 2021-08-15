@@ -17,25 +17,20 @@ function openQuizzById(quizzId) {
 
 function renderQuizzes() {
     const ulQuizzes = document.querySelector(".all-quizzes .quizzes-list");
-    // Verificar depois, por algum motivo o onclick não tá funcionando na primeira li
-    ulQuizzes.innerHTML = `
-        <li class="option" id="${quizzes[0].id}  onclick="alert('onclick funcionando')">
-            <h2>Todos os Quizzes</h2>
-            <img class="image-quiz" src="${quizzes[0].image}">
-            <div class="image-quiz-box"></div>
-            <p>${quizzes[0].title}</p>
-        </li>
-        `;
 
-    for (let i = 1; i < quizzes.length; i++) {
-        ulQuizzes.innerHTML += `
-        <li class="option" id="${quizzes[i].id}" onclick="openQuizzById(${quizzes[i].id})">
-            <img class="image-quiz" src="${quizzes[i].image}">
+    let htmlQuizzes = ''
+
+    for (let quizz of quizzes) {
+        htmlQuizzes += `
+        <li class="option" id="${quizz.id}" onclick="openQuizzById(${quizz.id})">
+            <img class="image-quiz" src="${quizz.image}">
             <div class="image-quiz-box"></div>
-            <p>${quizzes[i].title}</p>
+            <p>${quizz.title}</p>
         </li>
         `;
     }
+
+    ulQuizzes.innerHTML = htmlQuizzes
 }
 
 function listQuizzes(listQuizzesResponse) {
