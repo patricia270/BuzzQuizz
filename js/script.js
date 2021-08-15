@@ -32,9 +32,35 @@ function listQuizzes(listQuizzesResponse) {
     console.log(quizzes);
     renderQuizzes();
 }
-getQuizzes()
 
-console.log("carregou")
+getQuizzes();
+
+function showThirdScreen() {
+     const thirdScreen = document.querySelector(".third-screen .initial-informations-quizz");
+     const firstScreen = document.querySelector(".first-screen").classList.add("hidden");
+     thirdScreen.classList.remove("hidden");
+}
+
+
+function followCreateQuizz() {
+    const createYourQuestion = document.querySelector(".create-your-questions-box");
+    const inicialInformationsQuizz = document.querySelector(".initial-informations-quizz").classList.add("hidden");
+    createYourQuestion.classList.remove("hidden");
+    
+}
+
+function followToCreatLevels() {
+    const ToCreatLevels = document.querySelector(".decide-levels-box");
+    const screenCreatYourQuestion = document.querySelector(".create-your-questions-box").classList.add("hidden");
+    ToCreatLevels.classList.remove("hidden");
+}
+
+function finishQuizz() {
+    const ToFinishQuizz = document.querySelector(".finish-quizz");
+    const screenCreatYourQuestion = document.querySelector(".decide-levels-box").classList.add("hidden");
+    ToFinishQuizz.classList.remove("hidden");
+}
+
 
 
 

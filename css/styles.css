@@ -335,7 +335,7 @@ p {
     height: 27px;
 }
 
-.initial-informations-quiz {
+.initial-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -367,6 +367,238 @@ p {
     border-radius: 15px;
     color: #FFF5F4;
 }
+
+.create-your-questions {
+    margin-top: 132px;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 36px;
+}
+
+.create-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pergunta p {
+    margin-left: 17px;
+    margin-top: 27px;
+    font-weight: bold;
+}
+
+.pergunta {
+    width: 600px;
+    background-color: #FFFFFF;
+    margin-bottom: 24px;
+} 
+
+.pergunta input {
+    width: 564px;
+    height: 46px;
+    margin-left: 16px;
+    border: 1px solid #D1D1D1;
+    padding-left: 23.16px;
+}
+
+.pergunta-fechada {
+    width: 601px;
+    height: 74px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.pergunta-fechada span {
+    margin-left: 17px;
+    margin-top: 27px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.definindo-pergunta {
+    margin-top: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resposta-correta {
+    margin-top: 24px;
+}
+
+.resposta-incorreta {
+    margin-top: 14px;
+}
+.pergunta-fechada ion-icon {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.resposta-incorreta li:nth-child(2n) {
+    margin-bottom: 32px;
+}
+
+.resposta-incorreta li:last-child {
+    margin-bottom: 24px;
+}
+
+.resposta-incorreta li:nth-child(2n + 1) {
+    margin-bottom: 14px;
+}
+
+.resposta-correta li:nth-child(2n) {
+    margin-bottom: 28px;
+}
+
+.resposta-correta li:nth-child(2n + 1) {
+    margin-bottom: 14px;
+}
+
+.definindo-pergunta li:nth-child(2n) {
+    margin-bottom: 28px;
+}
+
+.definindo-pergunta li:nth-child(2n + 1) {
+    margin-bottom: 14px;
+}
+
+.definindo-nivel {
+    margin-top: 27px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.level {
+    width: 600px;
+    background-color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.levels-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.levels-box input {
+    width: 564px;
+    height: 46px;
+    margin-left: 16px;
+    padding-left: 23.16px;
+    margin-bottom: 14px;
+    border: 1px solid #D1D1D1;
+}
+
+.create-your-levels {
+    margin-top: 132px;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 36px;
+}
+
+.level p {
+    margin-left: 17px;
+    margin-top: 27px;
+    font-weight: bold;
+}
+
+.follow-create-levels {
+    width: 352.82px;
+    height: 54px;
+    margin-top: 59px;
+    margin-bottom: 15px;
+    background-color: #EC362D;
+    border-radius: 15px;
+    border: none;
+    color: #FFF5F4;
+    font-size: 21px;
+}
+
+.button-finish-quizz {
+    width: 324px;
+    height: 54px;
+    margin-top: 53px;
+    margin-bottom: 15px;
+    background-color: #EC362D;
+    border-radius: 15px;
+    border: none;
+    color: #FFF5F4;
+    font-size: 21px;
+}
+
+
+.quizz-done-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 132px;
+}
+
+.quizz-done {
+    position: relative;
+    width: 500px;
+    height: 266px;
+    background-color: red;
+}
+
+
+.your-quizz-done {
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 36px;
+}
+
+.image-quiz-done {
+    width: 500px;
+    height: 266px;
+    border-radius: 5px;
+}
+
+.image-quiz-done-box {
+    width: 500px;
+    height: 266px;
+    border-radius: 5px;
+    background-image: linear-gradient( to bottom, transparent, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+    position: absolute;
+    top: 0;
+}
+
+.quizz-done p {
+    width: 301px;
+    height: 54px; 
+    font-size: 19px;
+    color: #FFFFFF;
+    line-height: 22px;
+    position: absolute;
+    bottom: 7px;
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.access-quizz {
+    width: 220.32px;
+    height: 44px;
+    margin-top: 45px;
+    background-color: #EC362D;
+    border-radius: 15px;
+    border: none;
+    color: #FFF5F4;
+    font-size: 21px;
+}
+
+.go-to-home {
+    width: 220.32px;
+    height: 44px;
+    border: none;
+    color: #818181;
+    margin-top: 9px;
+    font-size: 21px;
+    background-color: #fafafa;
+}
+
+
 
 
 

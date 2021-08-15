@@ -18,7 +18,7 @@
                 <div class="first-login">
                     <section class="none-quiz">
                         <p>Você não criou nenhum quizz ainda :(</p>
-                        <button class="create-quiz">Criar Quizz</button>
+                        <button class="create-quiz" onclick="showThirdScreen()">Criar Quizz</button>
                     </section>
                 </div>
                 <section class="your-quizzes hidden">
@@ -111,18 +111,118 @@
         </div>
 
         <!-- HTML Tela 3 - Criação de um Quizz -->
-        <div class="third-screen hidden">
+        <div class="third-screen">
             <div class="main-content-create-quizzes">
-                <div class="initial-informations-quiz">
-                    <h4 class="header-to-start">Comece pelo começo</h4>               
-                    <div class="initial-form">
-                        <input type="text" placeholder="Título do seu quizz">
-                        <input type="text" placeholder="URL da imagem do seu quizz">
-                        <input type="text" placeholder="Quantidade de perguntas do quizz">
-                        <input type="text" placeholder="Quantidade de níveis do quizz">
+                <div class="initial-informations-quizz hidden">
+                    <div class="initial-box">
+                        <h4 class="header-to-start">Comece pelo começo</h4>               
+                        <div class="initial-form">
+                            <input type="text" placeholder="Título do seu quizz">
+                            <input type="text" placeholder="URL da imagem do seu quizz">
+                            <input type="text" placeholder="Quantidade de perguntas do quizz">
+                            <input type="text" placeholder="Quantidade de níveis do quizz">
+                        </div>
+                        <button class="follow-to-create" onclick="followCreateQuizz()">Prosseguir pra criar perguntas</button>
                     </div>
-                    <button class="follow-to-create">Prosseguir pra criar perguntas</button>
-                </div>                
+                </div>  
+                <div class="create-your-questions-box hidden">
+                    <div class="create-box">
+                        <h4 class="create-your-questions">Crie suas perguntas</h4>               
+                        <div class="pergunta">
+                            <p>Pergunta 1</p>
+                            <ul class="definindo-pergunta">
+                                <li>
+                                    <input type="text" placeholder="Texto da pergunta">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Cor de fundo da pergunta">
+                                </li>
+                            </ul>
+                            <p>Resposta correta</p>
+                            <ul class="resposta-correta">
+                                <li>
+                                    <input type="text" placeholder="Resposta correta">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="URL da imagem">
+                                </li>
+                            </ul>
+                            <p>Respostas incorreta</p>
+                            <ul class="resposta-incorreta">
+                                <li>
+                                    <input type="text" placeholder="Resposta incorreta 1">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="URL da imagem 1">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Resposta incorreta 2">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="URL da imagem 2">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Resposta incorreta 3">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="URL da imagem 3">
+                                </li>
+
+                            </ul>                                    
+                        </div>
+                        <div class="pergunta-fechada">
+                            <span>Pergunta 2</span>
+                            <ion-icon name="create-outline"></ion-icon>
+                        </div>     
+                        <div class="pergunta-fechada">
+                            <span>Pergunta 3</span>
+                            <ion-icon name="create-outline"></ion-icon>
+                        </div>   
+                        <button class="follow-create-levels" onclick="followToCreatLevels()">Prosseguir pra criar níveis</button>                     
+                    </div>                    
+                </div>  
+                <div class="decide-levels-box hidden">
+                    <div class="levels-box">
+                        <h4 class="create-your-levels">Agora, decida os níveis</h4> 
+                        <div class="level">
+                            <p>Nível 1</p>
+                            <ul class="definindo-nivel">
+                                <li>
+                                    <input type="text" placeholder="Texto da pergunta">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Cor de fundo da pergunta">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pergunta-fechada">
+                            <span>Nível 2</span>
+                            <ion-icon name="create-outline"></ion-icon>
+                        </div>     
+                        <div class="pergunta-fechada">
+                            <span>Nível 3</span>
+                            <ion-icon name="create-outline"></ion-icon>
+                        </div> 
+                        <button class="button-finish-quizz" onclick="finishQuizz()">Finalizar Quizz</button>               
+                    </div>            
+                </div> 
+                <div class="finish-quizz hidden">
+                    <div class="quizz-done-box">
+                        <h4 class="your-quizz-done">Seu quizz está pronto!</h4>             
+                        <div class="quizz-done">
+                            <img class="image-quiz-done" src="assets/pot.png">
+                            <div class="image-quiz-done-box"></div>
+                            <p>O quão Potterhead é você?</p>
+                        </div>
+                        <div>
+                            <button class="access-quizz">Acessar Quizz</button>
+                        </div>    
+                        <div>
+                            <button class="go-to-home">Voltar pra home</button>
+                        </div>
+                                                                  
+                    </div>                    
+                </div>           
             </div>
         </div>
     </main>
