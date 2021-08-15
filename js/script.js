@@ -34,31 +34,112 @@ function listQuizzes(listQuizzesResponse) {
 }
 getQuizzes();
 
+
 function showThirdScreen() {
      const thirdScreen = document.querySelector(".third-screen .initial-informations-quizz");
      const firstScreen = document.querySelector(".first-screen").classList.add("hidden");
      thirdScreen.classList.remove("hidden");
 }
 
+let title;
+let image;
+let numberQuestions = 0;
+let numberLevels = 0;
+let divQuestions;
 
 function followCreateQuizz() {
+    title = document.querySelector(".input-quizz-title").value;
+    console.log(title);
+    image = document.querySelector(".input-image").value;
+    console.log(image);
+    numberQuestions = document.querySelector(".number-questions").value;
+    console.log(numberQuestions);
+    numberLevels = document.querySelector(".number-levels").value;
+    console.log(numberLevels);
     const createYourQuestion = document.querySelector(".create-your-questions-box");
     const inicialInformationsQuizz = document.querySelector(".initial-informations-quizz").classList.add("hidden");
-    createYourQuestion.classList.remove("hidden");
-    
+    createYourQuestion.classList.remove("hidden");   
+    divQuestions = document.querySelector(".create-box")
+    divQuestions.innerHTML = `
+        <h4 class="create-your-questions">Crie suas perguntas</h4> 
+    `;
+    for (let i = 1; i <= numberQuestions; i++) {
+        divQuestions.innerHTML += `
+        <div class="pergunta-fechada">
+            <span>Pergunta ${i}</span>
+            <ion-icon name="create-outline" onclick="editQuestion(this)"></ion-icon>
+        </div>     
+        `
+    }
+
 }
 
+let questionText;
+let backgroundColor;
+let rightAnswer;
+let urlImage;
+let wrongAnswer1;
+let wrongAnswer2;
+let wrongAnswer3;
+let urlImage1;
+let urlImage2;
+let urlImage3;
+
 function followToCreatLevels() {
+
+    questionText = document.querySelector(".input-question").value;
+    console.log(questionText);
+    backgroundColor = document.querySelector(".input-background-color").value;
+    console.log(backgroundColor);
+    rightAnswer = document.querySelector(".input-right-answer").value;
+    console.log(rightAnswer);
+    urlImage = document.querySelector(".input-url-image-correct-answer").value;
+    console.log(urlImage);
+    wrongAnswer1 = document.querySelector(".input-wrong-answer").value;
+    console.log(wrongAnswer1);
+    urlImage1 = document.querySelector(".input-url-image-wrong-answer").value;
+    console.log(urlImage1);
+    wrongAnswer2 = document.querySelector(".input-wrong-answer2").value;
+    console.log(wrongAnswer2);
+    urlImage2 = document.querySelector(".input-url-image-wrong-answer2").value;
+    console.log(urlImage2);
+    wrongAnswer3 = document.querySelector(".input-wrong-answer3").value;
+    console.log(wrongAnswer3);
+    urlImage3 = document.querySelector(".input-url-image-wrong-answer3").value;
+    console.log(urlImage3);
+    
+
+
     const ToCreatLevels = document.querySelector(".decide-levels-box");
     const screenCreatYourQuestion = document.querySelector(".create-your-questions-box").classList.add("hidden");
     ToCreatLevels.classList.remove("hidden");
+   
 }
 
+let levelText;
+let percentageHits;
+let urlImageLevel;
+let levelDescription;
+
 function finishQuizz() {
+    levelText = document.querySelector(".input-level-title").value;
+    console.log(levelText);
+    percentageHits = document.querySelector(".input-perc-hits").value;
+    console.log(percentageHits);
+    urlImageLevel = document.querySelector(".input-url-image-level").value;
+    console.log(urlImageLevel);
+    levelDescription = document.querySelector(".level-description").value;
+    console.log(levelDescription);
     const ToFinishQuizz = document.querySelector(".finish-quizz");
     const screenCreatYourQuestion = document.querySelector(".decide-levels-box").classList.add("hidden");
     ToFinishQuizz.classList.remove("hidden");
 }
+
+
+
+
+
+
 
 
 

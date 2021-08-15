@@ -65,10 +65,10 @@
                     <div class="initial-box">
                         <h4 class="header-to-start">Comece pelo começo</h4>               
                         <div class="initial-form">
-                            <input type="text" placeholder="Título do seu quizz">
-                            <input type="text" placeholder="URL da imagem do seu quizz">
-                            <input type="text" placeholder="Quantidade de perguntas do quizz">
-                            <input type="text" placeholder="Quantidade de níveis do quizz">
+                            <input class="input-quizz-title" type="text" placeholder="Título do seu quizz">
+                            <input class="input-image" type="text" placeholder="URL da imagem do seu quizz">
+                            <input class="number-questions" type="text" placeholder="Quantidade de perguntas do quizz">
+                            <input class="number-levels" type="text" placeholder="Quantidade de níveis do quizz">
                         </div>
                         <button class="follow-to-create" onclick="followCreateQuizz()">Prosseguir pra criar perguntas</button>
                     </div>
@@ -80,40 +80,40 @@
                             <p>Pergunta 1</p>
                             <ul class="definindo-pergunta">
                                 <li>
-                                    <input type="text" placeholder="Texto da pergunta">
+                                    <input class="input-question" type="text" placeholder="Texto da pergunta">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="Cor de fundo da pergunta">
+                                    <input class="input-background-color" type="text" placeholder="Cor de fundo da pergunta">
                                 </li>
                             </ul>
                             <p>Resposta correta</p>
                             <ul class="resposta-correta">
                                 <li>
-                                    <input type="text" placeholder="Resposta correta">
+                                    <input class="input-right-answer" type="text" placeholder="Resposta correta">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="URL da imagem">
+                                    <input class="input-url-image-correct-answer" type="text" placeholder="URL da imagem">
                                 </li>
                             </ul>
                             <p>Respostas incorreta</p>
                             <ul class="resposta-incorreta">
                                 <li>
-                                    <input type="text" placeholder="Resposta incorreta 1">
+                                    <input class="input-wrong-answer" type="text" placeholder="Resposta incorreta 1">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="URL da imagem 1">
+                                    <input class="input-url-image-wrong-answer"  type="text" placeholder="URL da imagem 1">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="Resposta incorreta 2">
+                                    <input class="input-wrong-answer2" type="text" placeholder="Resposta incorreta 2">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="URL da imagem 2">
+                                    <input class="input-url-image-wrong-answer2" type="text" placeholder="URL da imagem 2">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="Resposta incorreta 3">
+                                    <input class="input-wrong-answer3" type="text" placeholder="Resposta incorreta 3">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="URL da imagem 3">
+                                    <input class="input-url-image-wrong-answer3" type="text" placeholder="URL da imagem 3">
                                 </li>
 
                             </ul>                                    
@@ -136,10 +136,16 @@
                             <p>Nível 1</p>
                             <ul class="definindo-nivel">
                                 <li>
-                                    <input type="text" placeholder="Texto da pergunta">
+                                    <input class="input-level-title" type="text" placeholder="Título do nível">
                                 </li>
                                 <li>
-                                    <input type="text" placeholder="Cor de fundo da pergunta">
+                                    <input class="input-perc-hits" type="text" placeholder="% de acerto mínima">
+                                </li>
+                                <li>
+                                    <input class="input-url-image-level" type="text" placeholder="URL da imagem do nível">
+                                </li>
+                                <li>
+                                    <input class="level-description" type="text" placeholder="Descrição do nível">
                                 </li>
                             </ul>
                         </div>
