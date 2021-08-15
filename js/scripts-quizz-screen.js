@@ -229,7 +229,6 @@ function goToHome() {
 function startQuizz() {
 	window.scrollTo({ top: document.querySelector('.top-banner'), behavior: 'smooth'})
 	shuffleAnswers()
-
 	renderQuizz()
 }
 

@@ -32,7 +32,6 @@ function listQuizzes(listQuizzesResponse) {
     console.log(quizzes);
     renderQuizzes();
 }
-
 getQuizzes();
 
 function showThirdScreen() {

@@ -600,12 +600,6 @@ p {
 
 
 
-
-
-
-
-
-
 @media (max-width: 1100px) {
     .top-bar, .all-quizzes, .your-quizzes, .quizzes-list, .first-screen, .main-content-quizz, .main-content-create-quizzes, .inicio {
         width: 100vw;
