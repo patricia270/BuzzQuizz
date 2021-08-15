@@ -5,26 +5,32 @@ function getQuizzes() {
     getQuizzesPromise.then(listQuizzes);
 }
 
+function openQuizzById(quizzId) {
+	for (let quizz of quizzes) {
+        if (quizz.id === quizzId) {
+            console.log(quizz)
+            startQuizz(quizz)
+            return
+        }
+    }
+}
+
 function renderQuizzes() {
     const ulQuizzes = document.querySelector(".all-quizzes .quizzes-list");
-    ulQuizzes.innerHTML = `
-        <li class="option" id="${quizzes[0].id}">
-            <h2>Todos os Quizzes</h2> 
-            <img class="image-quiz" src="${quizzes[0].image}">
-            <div class="image-quiz-box"></div>
-            <p>${quizzes[0].title}</p>
-        </li>
-        `;
 
-    for (let i = 1; i < quizzes.length; i++) {
-        ulQuizzes.innerHTML += `
-        <li class="option" id="${quizzes[i].id}">
-            <img class="image-quiz" src="${quizzes[i].image}">
+    let htmlQuizzes = ''
+
+    for (let quizz of quizzes) {
+        htmlQuizzes += `
+        <li class="option" id="${quizz.id}" onclick="openQuizzById(${quizz.id})">
+            <img class="image-quiz" src="${quizz.image}">
             <div class="image-quiz-box"></div>
-            <p>${quizzes[i].title}</p>
+            <p>${quizz.title}</p>
         </li>
         `;
     }
+
+    ulQuizzes.innerHTML = htmlQuizzes
 }
 
 function listQuizzes(listQuizzesResponse) {
