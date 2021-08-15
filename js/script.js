@@ -116,9 +116,9 @@ function followToCreatLevels() {
     
 
 
-    const ToCreatLevels = document.querySelector(".decide-levels-box");
+    const toCreatLevels = document.querySelector(".decide-levels-box");
     const screenCreatYourQuestion = document.querySelector(".create-your-questions-box").classList.add("hidden");
-    ToCreatLevels.classList.remove("hidden");
+    toCreatLevels.classList.remove("hidden");
    
 }
 

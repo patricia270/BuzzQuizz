@@ -18,7 +18,7 @@
                 <div class="first-login">
                     <section class="none-quiz">
                         <p>Você não criou nenhum quizz ainda :(</p>
-                        <button class="create-quiz" onclick="showThirdScreen()">Criar Quizz</button>
+                        <button class="create-quiz" onclick="handleClickOnCreateQuizz()">Criar Quizz</button>
                     </section>
                 </div>
                 <section class="your-quizzes hidden">
@@ -70,7 +70,7 @@
                             <input class="number-questions" type="text" placeholder="Quantidade de perguntas do quizz">
                             <input class="number-levels" type="text" placeholder="Quantidade de níveis do quizz">
                         </div>
-                        <button class="follow-to-create" onclick="followCreateQuizz()">Prosseguir pra criar perguntas</button>
+                        <button class="follow-to-create" onclick="handleClickOnFollowToCreateQuestions()">Prosseguir pra criar perguntas</button>
                     </div>
                 </div>  
                 <div class="create-your-questions-box hidden">
@@ -183,6 +183,7 @@
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/scripts-quizz-screen.js"></script>
+    <script src="./js/scripts-creation-quizz.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

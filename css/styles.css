@@ -702,3 +702,11 @@ p {
         font-size: 18px;
     }
 }
+
+.pergunta-fechada :not(.to-show-when-closed) {
+    display: none;
+}
+
+.pergunta .to-show-when-closed, .level .to-show-when-closed {
+    display: none;
+}
