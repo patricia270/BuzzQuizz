@@ -76,9 +76,9 @@
                 <div class="create-your-questions-box hidden">
                     <div class="create-box">
                         <h4 class="create-your-questions">Crie suas perguntas</h4>               
-                        <div class="pergunta">
+                        <div class="div-question">
                             <p>Pergunta 1</p>
-                            <ul class="definindo-pergunta">
+                            <ul class="set-question">
                                 <li>
                                     <input class="input-question" type="text" placeholder="Texto da pergunta">
                                 </li>
@@ -87,7 +87,7 @@
                                 </li>
                             </ul>
                             <p>Resposta correta</p>
-                            <ul class="resposta-correta">
+                            <ul class="right-answer">
                                 <li>
                                     <input class="input-right-answer" type="text" placeholder="Resposta correta">
                                 </li>
@@ -96,7 +96,7 @@
                                 </li>
                             </ul>
                             <p>Respostas incorreta</p>
-                            <ul class="resposta-incorreta">
+                            <ul class="wrong-answer">
                                 <li>
                                     <input class="input-wrong-answer" type="text" placeholder="Resposta incorreta 1">
                                 </li>
@@ -118,23 +118,24 @@
 
                             </ul>                                    
                         </div>
-                        <div class="pergunta-fechada">
+                        <div class="box-closed">
                             <span>Pergunta 2</span>
-                            <ion-icon name="create-outline"></ion-icon>
+                            <ion-icon class="edit-icon" name="create-outline"></ion-icon>
                         </div>     
-                        <div class="pergunta-fechada">
+                        <div class="box-closed">
                             <span>Pergunta 3</span>
-                            <ion-icon name="create-outline"></ion-icon>
+                            <ion-icon class="edit-icon" name="create-outline"></ion-icon>
                         </div>   
-                        <button class="follow-create-levels" onclick="followToCreatLevels()">Prosseguir pra criar níveis</button>                     
-                    </div>                    
-                </div>  
+                    </div>  
+                    <div class="button-follow-create-levels">
+                        <button class="follow-create-levels" onclick="followToCreatLevels()">Prosseguir pra criar níveis</button>                                                       </div> 
+                    </div>  
                 <div class="decide-levels-box hidden">
                     <div class="levels-box">
                         <h4 class="create-your-levels">Agora, decida os níveis</h4> 
                         <div class="level">
                             <p>Nível 1</p>
-                            <ul class="definindo-nivel">
+                            <ul class="set-level">
                                 <li>
                                     <input class="input-level-title" type="text" placeholder="Título do nível">
                                 </li>
@@ -149,11 +150,11 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="pergunta-fechada">
+                        <div class="box-closed">
                             <span>Nível 2</span>
                             <ion-icon name="create-outline"></ion-icon>
                         </div>     
-                        <div class="pergunta-fechada">
+                        <div class="box-closed">
                             <span>Nível 3</span>
                             <ion-icon name="create-outline"></ion-icon>
                         </div> 

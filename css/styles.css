@@ -242,6 +242,14 @@ p {
     height: calc((10cm - 24px)/1.9);
 }
 
+.selected {
+    background-color: pink;
+}
+
+.invisible {
+    opacity: 0;
+}
+
 .alternative > p {
     padding-top: 5px;
     padding-bottom: -2px;
@@ -381,19 +389,20 @@ p {
     align-items: center;
 }
 
-.pergunta p {
+.div-question p {
     margin-left: 17px;
     margin-top: 27px;
+    padding-top: 27px;
     font-weight: bold;
 }
 
-.pergunta {
+.div-question {
     width: 600px;
     background-color: #FFFFFF;
     margin-bottom: 24px;
 } 
 
-.pergunta input {
+.div-question input {
     width: 564px;
     height: 46px;
     margin-left: 16px;
@@ -401,70 +410,71 @@ p {
     padding-left: 23.16px;
 }
 
-.pergunta-fechada {
+.box-closed {
     width: 601px;
     height: 74px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
     margin-bottom: 22px;
 }
 
-.pergunta-fechada span {
+.box-closed span {
     margin-left: 17px;
     margin-top: 27px;
     margin-bottom: 25px;
     font-weight: bold;
+    position: absolute;
 }
 
-.definindo-pergunta {
+.set-question {
     margin-top: 12px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.resposta-correta {
+.right-answer {
     margin-top: 24px;
 }
 
-.resposta-incorreta {
+.wrong-answer {
     margin-top: 14px;
 }
-.pergunta-fechada ion-icon {
+.box-closed ion-icon {
     font-size: 25px;
-    margin-right: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
-.resposta-incorreta li:nth-child(2n) {
+.wrong-answer li:nth-child(2n) {
     margin-bottom: 32px;
 }
 
-.resposta-incorreta li:last-child {
+.wrong-answer li:last-child {
     margin-bottom: 24px;
 }
 
-.resposta-incorreta li:nth-child(2n + 1) {
+.wrong-answer li:nth-child(2n + 1) {
     margin-bottom: 14px;
 }
 
-.resposta-correta li:nth-child(2n) {
+.right-answer li:nth-child(2n) {
     margin-bottom: 28px;
 }
 
-.resposta-correta li:nth-child(2n + 1) {
+.right-answer li:nth-child(2n + 1) {
     margin-bottom: 14px;
 }
 
-.definindo-pergunta li:nth-child(2n) {
+.set-question li:nth-child(2n) {
     margin-bottom: 28px;
 }
 
-.definindo-pergunta li:nth-child(2n + 1) {
+.set-question li:nth-child(2n + 1) {
     margin-bottom: 14px;
 }
 
-.definindo-nivel {
+.set-level {
     margin-top: 27px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
@@ -506,6 +516,7 @@ p {
 .follow-create-levels {
     width: 352.82px;
     height: 54px;
+    margin: 0 auto;
     margin-top: 59px;
     margin-bottom: 15px;
     background-color: #EC362D;
@@ -513,6 +524,12 @@ p {
     border: none;
     color: #FFF5F4;
     font-size: 21px;
+}
+
+.button-follow-create-levels {
+    width: 352.82px;
+    height: 54px;
+    margin: 0 auto;
 }
 
 .button-finish-quizz {

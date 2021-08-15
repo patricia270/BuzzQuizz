@@ -71,10 +71,11 @@ function followCreateQuizz() {
     `;
     for (let i = 1; i <= numberQuestions; i++) {
         divQuestions.innerHTML += `
-        <div class="pergunta-fechada">
+        <div class="box-closed">
             <span>Pergunta ${i}</span>
-            <ion-icon name="create-outline" onclick="editQuestion(this)"></ion-icon>
-        </div>     
+            <ion-icon class="edit-icon" name="create-outline" onclick="showQuestionForm(this)"></ion-icon>
+        </div> 
+            
         `
     }
 
@@ -122,6 +123,64 @@ function followToCreatLevels() {
    
 }
 
+function showQuestionForm(element) {
+    let showQuestionForm = document.querySelector(".create-box .edit-icon.selected");
+    let questionSelected = element.parentNode.innerText.substring(8);
+    element.parentNode.classList.remove("box-closed");
+    element.parentNode.innerHTML = `
+    <div class="div-question">
+        <p>Pergunta ${questionSelected}</p>
+        <ul class="set-question">
+            <li>
+                <input class="input-question" type="text" placeholder="Texto da pergunta">
+            </li>
+            <li>
+                <input class="input-background-color" type="text" placeholder="Cor de fundo da pergunta">
+            </li>
+        </ul>
+        <p>Resposta correta</p>
+        <ul class="right-answer">
+            <li>
+                <input class="input-right-answer" type="text" placeholder="Resposta correta">
+            </li>
+            <li>
+                <input class="input-url-image-correct-answer" type="text" placeholder="URL da imagem">
+            </li>
+        </ul>
+        <p>Respostas incorreta</p>
+        <ul class="wrong-answer">
+            <li>
+                <input class="input-wrong-answer" type="text" placeholder="Resposta incorreta 1">
+            </li>
+            <li>
+                <input class="input-url-image-wrong-answer"  type="text" placeholder="URL da imagem 1">
+            </li>
+            <li>
+                <input class="input-wrong-answer2" type="text" placeholder="Resposta incorreta 2">
+            </li>
+            <li>
+                <input class="input-url-image-wrong-answer2" type="text" placeholder="URL da imagem 2">
+            </li>
+            <li>
+                <input class="input-wrong-answer3" type="text" placeholder="Resposta incorreta 3">
+            </li>
+            <li>
+                <input class="input-url-image-wrong-answer3" type="text" placeholder="URL da imagem 3">
+            </li>
+
+        </ul>                                    
+    </div>
+    `;
+    let caixa = document.querySelector(".box-closed")
+
+    if (showQuestionForm !== null) {
+         showQuestionForm.classList.remove("selected");
+     } 
+    
+    element.classList.add("selected");
+
+}
+
 let levelText;
 let percentageHits;
 let urlImageLevel;
@@ -142,8 +201,83 @@ function finishQuizz() {
 }
 
 
+// function postQuizz() {
+//     const postedQuizz = {
+//         title,
+//         image,
+//         questions: [
+//             {
+//                 title: questionText,
+//                 color: backgroundColor,
+//                 answers: [
+//                     {
+//                         text: rightAnswer,
+//                         image: urlImage,
+//                         isCorrectAnswer: true
+//                     },
+//                     {
+//                         text: wrongAnswer1,
+//                         image: urlImage1,
+//                         isCorrectAnswer: false
+//                     }
+//                 ]
+//             },
+//             {
+//                 title: questionText2,
+//                 color: backgroundColor,
+//                 answers: [
+//                     {
+//                         text: rightAnswer,
+//                         image: urlImage,
+//                         isCorrectAnswer: true
+//                     },
+//                     {
+//                         text: wrongAnswer1,
+//                         image: urlImage1,
+//                         isCorrectAnswer: false
+//                     }
+//                 ]
+//             },
+//             {
+//                 title: questionText3,
+//                 color: backgroundColor,
+//                 answers: [
+//                     {
+//                         text: rightAnswer,
+//                         image: urlImage,
+//                         isCorrectAnswer: true
+//                     },
+//                     {
+//                         text: wrongAnswer1,
+//                         image: urlImage1,
+//                         isCorrectAnswer: false
+//                     }
+//                 ]
+//             }
+//         ],
+//         levels: [
+//             {
+//                 title: levelText,
+//                 image: urlImageLevel,
+//                 text: levelDescription,
+//                 minValue: 0
+//             },
+//             {
+//                 title: levelText,
+//                 image: urlImageLevel,
+//                 text: levelDescription,
+//                 minValue: percentageHits
+//             }
+//         ]
+//     }
 
+//     const postPromisseQuizz = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v3/buzzquizz/quizzes")
+//     postPromisseQuizz.then(quizzSent);
+// }
 
+// function quizzSent () {
+//     getQuizzes();
+// }
 
 
 
