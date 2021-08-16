@@ -448,7 +448,10 @@ function handleClickOnCreateQuizz() {
 }
 
 function handleClickOnFollowToCreateQuestions() {
-    if (!isValidInitialConditions()) return
+    if (!isValidInitialConditions()) {
+        alert('As informações não foram preenchidas corretamente!')
+        return
+    }
 
     const createYourQuestion = document.querySelector(".create-your-questions-box");
     createYourQuestion.classList.remove("hidden");
@@ -474,7 +477,10 @@ function handleClickOnFollowToCreateQuestions() {
 
 
 function handleClickOnCreateLevels() {
-    if (!areAllQuestionsValid()) return
+    if (!areAllQuestionsValid()) {
+        alert('As informações não foram preenchidas corretamente!')
+        return
+    }
 
     const toCreatLevels = document.querySelector(".decide-levels-box");
     toCreatLevels.classList.remove("hidden");
@@ -498,14 +504,20 @@ function handleClickOnCreateLevels() {
 }
 
 function handleClickOnFinishQuizz() {
-    if (!areAllLevelsValid()) return
+    if (!areAllLevelsValid()) {
+        alert('As informações não foram preenchidas corretamente!')
+        return
+    }
 
     currentQuizz = convertQuizzToMakePOST()
+
+    axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v3/buzzquizz/quizzes`, currentQuizz)
+    getQuizzes()
 
     const ToFinishQuizz = document.querySelector(".finish-quizz");
     ToFinishQuizz.classList.remove("hidden");
     document.querySelector(".decide-levels-box").classList.add("hidden");
 
     document.querySelector('.quizz-done > p').innerHTML = quizzInCreation.title
-    document.querySelector('.image-quiz-done').innerHTML = quizzInCreation.image
+    document.querySelector('.image-quiz-done').src = quizzInCreation.image
 }
