@@ -384,6 +384,63 @@ function areAllQuestionsValid() {
     return conditions.every(bool => bool)
 }
 
+function convertQuizzToMakePOST() {
+
+    function convertQuestionToMakePOST(question) {
+        let questionToPOST = {
+            title: question.title,
+            color: question.color,
+            answers: []
+        }
+
+        questionToPOST.answers.push({
+            text: question.correctAnswer.text,
+            image: question.correctAnswer.image,
+            isCorrectAnswer: true
+        })
+
+        question.wrongAnswers
+            .filter(answer => answer.text !== '' || answer.image !== '')
+            .forEach(answer => {
+                questionToPOST.answers.push({
+                    text: answer.text,
+                    image: answer.image,
+                    isCorrectAnswer: false
+                })
+            })
+        return questionToPOST
+    }
+
+
+    let quizzToPOST = {
+        title: quizzInCreation.title,
+        image: quizzInCreation.image,
+        questions: [],
+        levels: [
+            {
+                title: "Título do nível 1",
+                image: "https://http.cat/411.jpg",
+                text: "Descrição do nível 1",
+                minValue: 0
+            },
+            {
+                title: "Título do nível 2",
+                image: "https://http.cat/412.jpg",
+                text: "Descrição do nível 2",
+                minValue: 50
+            }
+        ]
+    }
+
+    quizzInCreation.questions.forEach(question => {
+        quizzToPOST.questions.push(convertQuestionToMakePOST(question))
+    })
+
+    quizzToPOST.levels = quizzInCreation.levels
+
+    return quizzToPOST
+}
+
 function handleClickOnCreateQuizz() {
     addListenersToInitialInputs()
 
@@ -441,9 +498,14 @@ function handleClickOnCreateLevels() {
 }
 
 function handleClickOnFinishQuizz() {
-    if (!areAllLevelsValid()) return 
+    if (!areAllLevelsValid()) return
+
+    currentQuizz = convertQuizzToMakePOST()
 
     const ToFinishQuizz = document.querySelector(".finish-quizz");
     ToFinishQuizz.classList.remove("hidden");
     document.querySelector(".decide-levels-box").classList.add("hidden");
+
+    document.querySelector('.quizz-done > p').innerHTML = quizzInCreation.title
+    document.querySelector('.image-quiz-done').innerHTML = quizzInCreation.image
 }

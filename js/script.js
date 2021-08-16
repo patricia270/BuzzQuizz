@@ -8,7 +8,6 @@ function getQuizzes() {
 function openQuizzById(quizzId) {
 	for (let quizz of quizzes) {
         if (quizz.id === quizzId) {
-            console.log(quizz)
             startQuizz(quizz)
             return
         }
