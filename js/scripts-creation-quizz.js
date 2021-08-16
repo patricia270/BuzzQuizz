@@ -532,7 +532,16 @@ function toSaveIdUserQuizz(quizzesObjects) {
     if (idListSerial === null) {
         let idVetor = [idQuizz];
         let idVetorSerial = JSON.stringify(idVetor);
-        localStorage.setItem("id", idVetorSerial);
+        localStorage.setItem("id", idVetorSerial);       
+        
+        // let firstLogin = document.querySelector(".first-login");
+        // firstLogin.innerHTML = `
+        //     <section class="none-quiz">
+        //         <p>Você não criou nenhum quizz ainda :(</p>
+        //         <button class="create-quiz" onclick="handleClickOnCreateQuizz()">Criar Quizz</button>
+        //     </section>
+        
+        // `;
     }
     else {
         let identify = JSON.parse(idListSerial);
@@ -568,4 +577,5 @@ function listQuizzesUsers(resposta) {
                                     <p>${vetor.title}</p>
                                 </li>
                                 `;
+
 }

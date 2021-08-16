@@ -19,14 +19,20 @@ function renderQuizzes() {
 
     let htmlQuizzes = ''
 
+    let idListSerial = localStorage.getItem("id");
+    let idVetorSerial = JSON.parse(idListSerial);
+    
     for (let quizz of quizzes) {
-        htmlQuizzes += `
-        <li class="option" id="${quizz.id}" onclick="openQuizzById(${quizz.id})">
-            <img class="image-quiz" src="${quizz.image}">
-            <div class="image-quiz-box"></div>
-            <p>${quizz.title}</p>
-        </li>
-        `;
+        if (idVetorSerial.indexOf(quizz.id) === -1) {
+
+            htmlQuizzes += `
+            <li class="option" id="${quizz.id}" onclick="openQuizzById(${quizz.id})">
+                <img class="image-quiz" src="${quizz.image}">
+                <div class="image-quiz-box"></div>
+                <p>${quizz.title}</p>
+            </li>
+            `;
+        }
     }
 
     ulQuizzes.innerHTML = htmlQuizzes
