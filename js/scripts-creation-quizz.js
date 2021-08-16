@@ -554,6 +554,7 @@ function toListUserQuizz() {
             </section>
        
         `;
+        firstLogin.classList.remove('hidden')
         return;
     }
     for (let i = 0; i < idVetorSerial.length; i++) {
