@@ -24,14 +24,10 @@
                 <section class="your-quizzes hidden">
                     <div class="header-of-section">
                         <h2>Seus Quizzes</h2>
-                        <span><ion-icon name="add-circle"></ion-icon></span>
+                        <span><ion-icon name="add-circle" onclick="handleClickOnCreateQuizz()"></ion-icon></span>
                     </div>
                     <ul class="quizzes-list">
-                        <li class="option">                            
-                            <img class="image-quiz" src="assets/pot.png">
-                            <div class="image-quiz-box"></div>
-                            <p>O quão Potterhead é você?</p>
-                        </li>
+                        
                         
                     </ul>
                 </section>
@@ -173,7 +169,7 @@
                             <button class="access-quizz" onclick="startQuizz(currentQuizz)">Acessar Quizz</button>
                         </div>    
                         <div>
-                            <button class="go-to-home" onclick="goToHome()">Voltar pra home</button>
+                            <button class="go-to-home" onclick="toListUserQuizz()">Voltar pra home</button>
                         </div>
                                                                   
                     </div>                    

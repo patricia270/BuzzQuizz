@@ -510,8 +510,11 @@ function handleClickOnFinishQuizz() {
 
     currentQuizz = convertQuizzToMakePOST()
 
-    axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v3/buzzquizz/quizzes`, currentQuizz)
+    const promise = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v3/buzzquizz/quizzes`, currentQuizz)
+    promise.then(toSaveIdUserQuizz);
     getQuizzes()
+
+    
 
     const ToFinishQuizz = document.querySelector(".finish-quizz");
     ToFinishQuizz.classList.remove("hidden");
@@ -519,4 +522,50 @@ function handleClickOnFinishQuizz() {
 
     document.querySelector('.quizz-done > p').innerHTML = quizzInCreation.title
     document.querySelector('.image-quiz-done').src = quizzInCreation.image
+}
+// começando a modificarrrrrr
+
+function toSaveIdUserQuizz(quizzesObjects) {
+    
+    let idQuizz = quizzesObjects.data.id;
+    let idListSerial = localStorage.getItem("id");
+    if (idListSerial === null) {
+        let idVetor = [idQuizz];
+        let idVetorSerial = JSON.stringify(idVetor);
+        localStorage.setItem("id", idVetorSerial);
+    }
+    else {
+        let identify = JSON.parse(idListSerial);
+        identify.push(idQuizz);
+        let idSerial = JSON.stringify(identify);
+        localStorage.setItem("id", idSerial);
+    }  
+
+}
+
+function toListUserQuizz() {
+    let idListSerial = localStorage.getItem("id");
+    let idVetorSerial = JSON.parse(idListSerial);
+    console.log(idVetorSerial);
+    for (let i = 0; i < idVetorSerial.length; i++) {
+        let vectorQuizzUserPromise = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v3/buzzquizz/quizzes/" + idVetorSerial[i]);
+        vectorQuizzUserPromise.then(listQuizzesUsers);
+    }
+}
+
+function listQuizzesUsers(resposta) {
+    document.querySelector('.first-screen').classList.remove('hidden')
+	let thirdScreen = document.querySelector(".third-screen");
+	thirdScreen.classList.add("hidden");
+    let vetor = resposta.data;
+    document.querySelector(".your-quizzes").classList.remove("hidden")
+    let ulQuizzesUsers = document.querySelector(".your-quizzes .quizzes-list");
+    document.querySelector(".none-quiz").classList.add("hidden")
+
+    ulQuizzesUsers.innerHTML += `<li class="option">                            
+                                    <img class="image-quiz" src="${vetor.image}">
+                                    <div class="image-quiz-box"></div>
+                                    <p>${vetor.title}</p>
+                                </li>
+                                `;
 }

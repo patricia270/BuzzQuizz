@@ -36,6 +36,7 @@ function listQuizzes(listQuizzesResponse) {
     quizzes = listQuizzesResponse.data;
     console.log(quizzes);
     renderQuizzes();
+    toListUserQuizz();
 }
 getQuizzes();
 
