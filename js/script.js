@@ -44,6 +44,7 @@ function showThirdScreen() {
      const thirdScreen = document.querySelector(".third-screen .initial-informations-quizz");
      const firstScreen = document.querySelector(".first-screen").classList.add("hidden");
      thirdScreen.classList.remove("hidden");
+     document.querySelector('.third-screen').classList.remove('hidden')
 }
 
 let title;

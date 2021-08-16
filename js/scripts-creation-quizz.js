@@ -288,8 +288,7 @@ function isImageURL(string) {
     ]
 
     for (const possibleEnd of possibleImagesURL) {
-        let reg = new RegExp(`.${possibleEnd}$`)
-        if (reg.test(string)) return true
+        if (string.includes(possibleEnd)) return true
     }
     return false
 }

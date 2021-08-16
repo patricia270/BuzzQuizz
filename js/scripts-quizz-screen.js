@@ -230,6 +230,8 @@ function goToHome() {
 	document.querySelector('.second-screen').classList.add('hidden')
 	const thirdScreen = document.querySelector(".third-screen .initial-informations-quizz");
 	thirdScreen.classList.add("hidden");
+
+	window.scroll(0, 0)
 }
 
 function showQuizzPage() {
@@ -240,6 +242,8 @@ function showQuizzPage() {
 
 function startQuizz(quizz) {
 	currentQuizz = quizz
+	correctAnswersCount = 0
+	wrongAnswersCount = 0
 
 	const topBanner = document.querySelector('.top-banner')
 
