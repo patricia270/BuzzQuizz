@@ -226,12 +226,7 @@ function shuffleAnswers() {
 }
 
 function goToHome() {
-	document.querySelector('.first-screen').classList.remove('hidden')
-	document.querySelector('.second-screen').classList.add('hidden')
-	const thirdScreen = document.querySelector(".third-screen .initial-informations-quizz");
-	thirdScreen.classList.add("hidden");
-
-	window.scroll(0, 0)
+	document.location.reload()
 }
 
 function showQuizzPage() {
