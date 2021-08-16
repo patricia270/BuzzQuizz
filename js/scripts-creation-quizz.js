@@ -554,9 +554,9 @@ function toListUserQuizz() {
 }
 
 function listQuizzesUsers(resposta) {
-    document.querySelector('.first-screen').classList.remove('hidden')
-	let thirdScreen = document.querySelector(".third-screen");
-	thirdScreen.classList.add("hidden");
+    // document.querySelector('.first-screen').classList.remove('hidden')
+	// let thirdScreen = document.querySelector(".third-screen");
+	// thirdScreen.classList.add("hidden");
     let vetor = resposta.data;
     document.querySelector(".your-quizzes").classList.remove("hidden")
     let ulQuizzesUsers = document.querySelector(".your-quizzes .quizzes-list");
