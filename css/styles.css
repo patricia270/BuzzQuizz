@@ -359,8 +359,17 @@ p {
     border: 1px solid #D1D1D1;
 }
 
+/* aqui é um text para inputs */
+input {
+    font-size: 19px;
+    font-style: italic;
+    color: #E5E5E5;
+    border-radius: 5px;
+}
+
 .follow-to-create {
     border: none;
+    font-size: 21px;
     background-color: #EC362D;
     width: 367.72px;
     height: 54px;
@@ -614,7 +623,7 @@ p {
         margin-top: 100px;
         margin-bottom: 70px;
     } 
-    
+
     span ion-icon {
         left: 309px;
     }
@@ -709,4 +718,68 @@ p {
 
 .pergunta .to-show-when-closed, .level .to-show-when-closed {
     display: none;
+}
+
+
+@media (max-width: 600px) {
+    .initial-form, .pergunta, .pergunta-fechada, .level, .finish-quizz, .quizz-done-box {
+        width: 100vw;
+    }
+
+    .initial-form {
+        margin-bottom: 24px;
+    }
+
+    .main-content-create-quizzes input {
+        width: 90.93vw;
+    }
+
+    .follow-to-create, .follow-create-levels, .button-finish-quizz {
+        width: 86.13vw;
+        font-size: 18px;
+    }
+
+    .follow-create-levels {
+        margin-top: 44px;
+    }
+
+    .button-finish-quizz {
+        margin-top: 8px;
+        font-size: 18px;
+    }
+
+    .access-quizz {
+        width: 58.75vw;
+        margin-top: 24px;
+        font-size: 18px;
+    }
+
+    .quizz-done-box {
+        margin-top: 108px;
+    }
+
+    .create-box p {
+        width: 90.93vw;
+        overflow-wrap: break-word;
+    }
+
+    .go-to-home {
+        font-size: 18px;
+    }
+
+    .your-quizz-done {
+        font-size: 20px;
+    }
+
+
+
+    .header-to-start, .create-your-questions, .create-your-levels {
+        margin-top: 106px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .quizz-done, .image-quiz-done, .image-quiz-done-box {
+        width: 90.66vw;
+    }     
 }

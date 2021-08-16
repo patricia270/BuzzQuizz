@@ -140,17 +140,3 @@ function finishQuizz() {
     const screenCreatYourQuestion = document.querySelector(".decide-levels-box").classList.add("hidden");
     ToFinishQuizz.classList.remove("hidden");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
