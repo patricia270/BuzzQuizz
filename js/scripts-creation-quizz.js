@@ -288,7 +288,7 @@ function isImageURL(string) {
     ]
 
     for (const possibleEnd of possibleImagesURL) {
-        if (string.includes(`data:image/${possibleEnd}`)) return true
+        if (string.includes(possibleEnd)) return true
     }
     return false
 }
