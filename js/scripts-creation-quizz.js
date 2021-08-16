@@ -228,6 +228,8 @@ function editQuestion(element) {
     const thisQuestion = element.parentNode
     const openedQuestion = document.querySelector('.pergunta')
 
+    setTimeout(() => scrollToAndCenter(thisQuestion), 300)
+
     // Fechando pergunta já aberta
     openedQuestion.classList.remove('pergunta')
     openedQuestion.classList.add('pergunta-fechada')
@@ -239,6 +241,8 @@ function editQuestion(element) {
 function editLevel(element) {
     const thisLevel = element.parentNode
     const openedLevel = document.querySelector('.level')
+
+    setTimeout(() => scrollToAndCenter(thisLevel), 300)
 
     // Fechando level já aberto
     openedLevel.classList.remove('level')
@@ -271,6 +275,115 @@ function createAllLevels() {
     return htmlOfAllLevels
 }
 
+function isImageURL(string) {
+    const possibleImagesURL = [
+        'jpg',
+        'jpeg',
+        'png',
+        'gif',
+        'webp',
+        'bmp',
+        'raw',
+        'svg'
+    ]
+
+    for (const possibleEnd of possibleImagesURL) {
+        let reg = new RegExp(`.${possibleEnd}$`)
+        if (reg.test(string)) return true
+    }
+    return false
+}
+
+function lengthIsBetween(string, min=1, max=null) {
+    const len = string.length
+
+    if (len < min) return false
+    if (max === null) return true
+    if (len > max) return false
+    return true
+}
+
+function isColorHexa(string) {
+    return /#[a-fA-F0-9]{6}/.test(string)
+}
+
+function notSatifiedInitialConditions() {
+    const { title, image, numberQuestions, numberLevels} = quizzInCreation
+    const conditions = [
+        ['O título deve ter entre 20 e 65 letras.', lengthIsBetween(title, min=20, max=65)],
+        ['O valor informado não é uma URL válida', isImageURL(image)],
+        ['Devem haver pelo menos 3 questões', numberQuestions >= 3],
+        ['Devem haver pelo menos 2 níveis', numberLevels >= 2]
+    ]
+
+    return conditions.filter(value => !value[1]).map(value => value[0])
+}
+
+function isValidInitialConditions() {
+    return notSatifiedInitialConditions().length === 0
+}
+
+function isAValidQuestion(question) {
+    const {title, color, correctAnswer, wrongAnswers} = question
+
+    let conditions = [
+        lengthIsBetween(title, min=1),
+        isColorHexa(color),
+        lengthIsBetween(correctAnswer.text, min=1),
+        isImageURL(correctAnswer.image)
+    ]
+
+    const notEmptyWrongAnswers = wrongAnswers.filter(answer => answer.text !== '' || answer.image !== '')
+
+    conditions.push(notEmptyWrongAnswers.length > 0)
+
+    const invalidAnswers = notEmptyWrongAnswers.filter(answer => {
+        const {text, image} = answer
+        return !lengthIsBetween(text, min=1) || !isImageURL(image)
+    })
+
+    conditions.push(invalidAnswers.length === 0)
+
+    return conditions.every(bool => bool)
+}
+
+function isAValidLevel(level) {
+    const { title, minValue, image, text } = level
+
+    const conditions = [
+        lengthIsBetween(title, min=10),
+        0 <= minValue && minValue <= 100,
+        isImageURL(image),
+        lengthIsBetween(text, min=30)
+    ]
+
+    return conditions.every(bool => bool)
+}
+
+function areAllLevelsValid() {
+    const { levels } = quizzInCreation
+
+    let conditions = []
+
+    levels.forEach(level => conditions.push(isAValidLevel(level)))
+
+    const levelsWithMinValueZero = levels.filter(level => Number(level.minValue) === 0)
+
+    conditions.push(levelsWithMinValueZero.length > 0)
+
+    return conditions.every(bool => bool)
+}
+
+function areAllQuestionsValid() {
+    const { questions } = quizzInCreation
+
+    let conditions = []
+
+    questions.forEach(question => conditions.push(isAValidQuestion(question)))
+
+    return conditions.every(bool => bool)
+}
+
 function handleClickOnCreateQuizz() {
     addListenersToInitialInputs()
 
@@ -278,6 +391,8 @@ function handleClickOnCreateQuizz() {
 }
 
 function handleClickOnFollowToCreateQuestions() {
+    if (!isValidInitialConditions()) return
+
     const createYourQuestion = document.querySelector(".create-your-questions-box");
     createYourQuestion.classList.remove("hidden");
     document.querySelector(".initial-informations-quizz").classList.add("hidden");
@@ -302,6 +417,8 @@ function handleClickOnFollowToCreateQuestions() {
 
 
 function handleClickOnCreateLevels() {
+    if (!areAllQuestionsValid()) return
+
     const toCreatLevels = document.querySelector(".decide-levels-box");
     toCreatLevels.classList.remove("hidden");
     document.querySelector(".create-your-questions-box").classList.add("hidden");
@@ -314,11 +431,19 @@ function handleClickOnCreateLevels() {
 
     divLevels.innerHTML += `<button 
     class="button-finish-quizz" 
-    onclick="finishQuizz()">Finalizar Quizz</button>`
+    onclick="handleClickOnFinishQuizz()">Finalizar Quizz</button>`
 
     for(let i = 0; i < quizzInCreation.numberLevels; i++) {
         quizzInCreation.levels.push(createEmptyLevel())
     }
 
     addListenersToAllLevelsInputs()
+}
+
+function handleClickOnFinishQuizz() {
+    if (!areAllLevelsValid()) return 
+
+    const ToFinishQuizz = document.querySelector(".finish-quizz");
+    ToFinishQuizz.classList.remove("hidden");
+    document.querySelector(".decide-levels-box").classList.add("hidden");
 }
