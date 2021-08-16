@@ -523,7 +523,6 @@ function handleClickOnFinishQuizz() {
     document.querySelector('.quizz-done > p').innerHTML = quizzInCreation.title
     document.querySelector('.image-quiz-done').src = quizzInCreation.image
 }
-// começando a modificarrrrrr
 
 function toSaveIdUserQuizz(quizzesObjects) {
     
@@ -546,7 +545,6 @@ function toSaveIdUserQuizz(quizzesObjects) {
 function toListUserQuizz() {
     let idListSerial = localStorage.getItem("id");
     let idVetorSerial = JSON.parse(idListSerial);
-    console.log(idVetorSerial);
     if(idVetorSerial === null){
         let firstLogin = document.querySelector(".first-login");
         firstLogin.innerHTML = `
@@ -575,6 +573,5 @@ function listQuizzesUsers(resposta) {
                                     <p>${vetor.title}</p>
                                 </li>
                                 `;
-    return;
 }
 

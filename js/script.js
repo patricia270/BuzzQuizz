@@ -6,7 +6,6 @@ function getQuizzes() {
 }
 
 function openQuizzById(quizzId) {
-    console.log("clicou")
 	for (let quizz of quizzes) {
         if (quizz.id === quizzId) {
             startQuizz(quizz)
@@ -44,7 +43,6 @@ function renderQuizzes() {
 
 function listQuizzes(listQuizzesResponse) {
     quizzes = listQuizzesResponse.data;
-    console.log(quizzes);
     renderQuizzes();
     toListUserQuizz();
 }
@@ -66,13 +64,9 @@ let divQuestions;
 
 function followCreateQuizz() {
     title = document.querySelector(".input-quizz-title").value;
-    console.log(title);
     image = document.querySelector(".input-image").value;
-    console.log(image);
     numberQuestions = document.querySelector(".number-questions").value;
-    console.log(numberQuestions);
     numberLevels = document.querySelector(".number-levels").value;
-    console.log(numberLevels);
     const createYourQuestion = document.querySelector(".create-your-questions-box");
     const inicialInformationsQuizz = document.querySelector(".initial-informations-quizz").classList.add("hidden");
     createYourQuestion.classList.remove("hidden");   
@@ -105,26 +99,15 @@ let urlImage3;
 function followToCreatLevels() {
 
     questionText = document.querySelector(".input-question").value;
-    console.log(questionText);
     backgroundColor = document.querySelector(".input-background-color").value;
-    console.log(backgroundColor);
     rightAnswer = document.querySelector(".input-right-answer").value;
-    console.log(rightAnswer);
     urlImage = document.querySelector(".input-url-image-correct-answer").value;
-    console.log(urlImage);
     wrongAnswer1 = document.querySelector(".input-wrong-answer").value;
-    console.log(wrongAnswer1);
     urlImage1 = document.querySelector(".input-url-image-wrong-answer").value;
-    console.log(urlImage1);
     wrongAnswer2 = document.querySelector(".input-wrong-answer2").value;
-    console.log(wrongAnswer2);
     urlImage2 = document.querySelector(".input-url-image-wrong-answer2").value;
-    console.log(urlImage2);
     wrongAnswer3 = document.querySelector(".input-wrong-answer3").value;
-    console.log(wrongAnswer3);
-    urlImage3 = document.querySelector(".input-url-image-wrong-answer3").value;
-    console.log(urlImage3);
-    
+    urlImage3 = document.querySelector(".input-url-image-wrong-answer3").value; 
 
 
     const toCreatLevels = document.querySelector(".decide-levels-box");
@@ -140,13 +123,9 @@ let levelDescription;
 
 function finishQuizz() {
     levelText = document.querySelector(".input-level-title").value;
-    console.log(levelText);
     percentageHits = document.querySelector(".input-perc-hits").value;
-    console.log(percentageHits);
     urlImageLevel = document.querySelector(".input-url-image-level").value;
-    console.log(urlImageLevel);
     levelDescription = document.querySelector(".level-description").value;
-    console.log(levelDescription);
     const ToFinishQuizz = document.querySelector(".finish-quizz");
     const screenCreatYourQuestion = document.querySelector(".decide-levels-box").classList.add("hidden");
     ToFinishQuizz.classList.remove("hidden");
