@@ -533,15 +533,6 @@ function toSaveIdUserQuizz(quizzesObjects) {
         let idVetor = [idQuizz];
         let idVetorSerial = JSON.stringify(idVetor);
         localStorage.setItem("id", idVetorSerial);       
-        
-        // let firstLogin = document.querySelector(".first-login");
-        // firstLogin.innerHTML = `
-        //     <section class="none-quiz">
-        //         <p>Você não criou nenhum quizz ainda :(</p>
-        //         <button class="create-quiz" onclick="handleClickOnCreateQuizz()">Criar Quizz</button>
-        //     </section>
-        
-        // `;
     }
     else {
         let identify = JSON.parse(idListSerial);
@@ -556,26 +547,34 @@ function toListUserQuizz() {
     let idListSerial = localStorage.getItem("id");
     let idVetorSerial = JSON.parse(idListSerial);
     console.log(idVetorSerial);
+    if(idVetorSerial === null){
+        let firstLogin = document.querySelector(".first-login");
+        firstLogin.innerHTML = `
+            <section class="none-quiz">
+                <p>Você não criou nenhum quizz ainda :(</p>
+                <button class="create-quiz" onclick="handleClickOnCreateQuizz()">Criar Quizz</button>
+            </section>
+       
+        `;
+        return;
+    }
     for (let i = 0; i < idVetorSerial.length; i++) {
         let vectorQuizzUserPromise = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v3/buzzquizz/quizzes/" + idVetorSerial[i]);
         vectorQuizzUserPromise.then(listQuizzesUsers);
     }
 }
 
-function listQuizzesUsers(resposta) {
-    // document.querySelector('.first-screen').classList.remove('hidden')
-	// let thirdScreen = document.querySelector(".third-screen");
-	// thirdScreen.classList.add("hidden");
+function listQuizzesUsers(resposta) {  
     let vetor = resposta.data;
     document.querySelector(".your-quizzes").classList.remove("hidden")
     let ulQuizzesUsers = document.querySelector(".your-quizzes .quizzes-list");
     document.querySelector(".none-quiz").classList.add("hidden")
-
-    ulQuizzesUsers.innerHTML += `<li class="option">                            
+    ulQuizzesUsers.innerHTML += `<li class="option" id="${vetor.id}" onclick="openQuizzById(${vetor.id})">                            
                                     <img class="image-quiz" src="${vetor.image}">
                                     <div class="image-quiz-box"></div>
                                     <p>${vetor.title}</p>
                                 </li>
                                 `;
-
+    return;
 }
+

@@ -6,6 +6,7 @@ function getQuizzes() {
 }
 
 function openQuizzById(quizzId) {
+    console.log("clicou")
 	for (let quizz of quizzes) {
         if (quizz.id === quizzId) {
             startQuizz(quizz)
@@ -21,7 +22,10 @@ function renderQuizzes() {
 
     let idListSerial = localStorage.getItem("id");
     let idVetorSerial = JSON.parse(idListSerial);
-    
+
+    if(idVetorSerial === null){
+        idVetorSerial = [];
+    }
     for (let quizz of quizzes) {
         if (idVetorSerial.indexOf(quizz.id) === -1) {
 
