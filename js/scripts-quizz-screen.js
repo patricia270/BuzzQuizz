@@ -240,6 +240,8 @@ function showQuizzPage() {
 
 function startQuizz(quizz) {
 	currentQuizz = quizz
+	correctAnswersCount = 0
+	wrongAnswersCount = 0
 
 	const topBanner = document.querySelector('.top-banner')
 
